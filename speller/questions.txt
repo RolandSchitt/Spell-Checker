@@ -1,0 +1,17 @@
+0.  This is the longest word in English and it's length is used as our upper bound of word length for the spell checker.
+1.  "getrusage() returns resource usage measures..."
+2.  16
+3.  In the definition of the "calculate" function, we tell it to expect two pointers, not two values.
+4.  In the for loop of main, we begin reading one char at a time from the submitted text file until we reach the end of the file.
+    As we read in each character we check that it is either an alphabetical character or an appostraphe.  As these characters
+    are being read in, we append the character to our string creating a word.  If the word is too long, we ignore it while
+    continuing to "consume" the remainder of the string and then begin anew.  If we reach a numerical character or a character
+    that is not an apostraphe or an alphabetical character, we also continue to "consume" the remainder of the string and begin
+    anew.  It is when we have begun a word that is less than our bounded length, contains only alpha characters and apostrophes
+    and terminates in an "\0", we have found a complete word.  It is recorded, counted, and checked for occurance in the
+    dictinary file.
+5.  It seems like fscanf would not keep track of the number of characters in a word and would not allow us to implement our
+    upper bound on word length.  It seems as though fscanf may also get tripped up on words being followed by anything other
+    than a space or a new line, which may cause problems such as a correctly spelled word being followed by a punctuation.
+6.  Once loaded in, we do not want to change the values of these variables.  The "word" should not alter once loaded, nor should
+    values in "dictionary".
